@@ -33,18 +33,18 @@ The library has been tested on both Ubuntu Linux (GCC) and Windows (Visual Studi
 
 ## Installation
 ```
-git clone https://github.com/mUogoro/rgbd_grabber.git rgbd_grabber
+git clone https://github.com/mUogoro/rgbd_ground_truth_generator.git rgbd_ground_truth_generator
 ```
 On Linux:
 ```
-cd rgbd_grabber
+cd rgbd_ground_truth_generator
 mkdir build && cd build
 cmake ..
 make && make install
 ```
 On Windows:
 ```
-cd rgbd_grabber
+cd rgbd_ground_truth_generator
 mkdir build
 cd build
 cmake ..
