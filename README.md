@@ -63,7 +63,7 @@ The ModelRenderer library is able to load any 3D model file containing a scene w
 
 Finally, the OpenGL shader files stored in the shaders subdirectory (default_frag_shader.fs and default_vert_shader.vs) must be copied into the current work directory.
 
-Two example models (a human hand and a human whole body), obtained by modifying the [MakeHuman](http://www.makehuman.org/) default model, are included in the test_models directory.
+Two example models (a human hand and a human whole body), obtained by modifying the [MakeHuman](http://www.makehuman.org/) default model, are included in test_models.zip.
 
 ## Citing
 Please cite the following work if you use this library in any scientific publication
