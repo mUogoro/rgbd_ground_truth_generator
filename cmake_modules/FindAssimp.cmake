@@ -7,21 +7,21 @@
 # ASSIMP_LIBRARIES - The libraries needed to use ASSIMP library
 
 if (WIN32)
-  set(ASSIMP_PATH_GUESS "C:/assimp" "C:/Program Files/assimp" "C:/Program Files (x86)/assimp")
+  set(ASSIMP_PATH_GUESS "C:/Assimp/include" "C:/Program Files/Assimp/include" "C:/Program Files (x86)/Assimp/include")
   find_path(ASSIMP_INCLUDE_DIR Importer.hpp postprocess.h scene.h mesh.h
             PATHS ${ASSIMP_PATH_GUESS}
-	    PATH_SUFFIXES "include" "include/assimp")
+	    PATH_SUFFIXES "assimp")
   # Check for specific VS library (so far only VS 2012 2013 2015 are checked)
   if (MSVC11)
-    set(LIB_SUFFIX "-vc2012")
+    set(LIB_SUFFIX "-vc110-mt")
   elseif (MSVC12)
-    set(LIB_SUFFIX "-vc2013")
+    set(LIB_SUFFIX "-vc120-mt")
   elseif (MSVC14)
-    set(LIB_SUFFIX "-vc2015")
+    set(LIB_SUFFIX "-vc140-mt")
   endif()
-  find_library(ASSIMP_LIBRARY NAMES assimp
+  find_library(ASSIMP_LIBRARY NAMES assimp${LIB_SUFFIX}
                PATHS ${ASSIMP_PATH_GUESS}
-               PATH_SUFFIXES "lib${LIB_SUFFIX}")
+               PATH_SUFFIXES "lib$")
 elseif (UNIX AND NOT APPLE)
   find_path(ASSIMP_INCLUDE_DIR Importer.hpp postprocess.h scene.h mesh.h
             PATHS "/usr/include" "/usr/local/include"
@@ -37,4 +37,4 @@ mark_as_advanced(ASSIMP_INCLUDE_DIR ASSIMP_LIBRARY)
 
 get_filename_component(ASSIMP_LIBRARIES ${ASSIMP_LIBRARY} NAME)
 get_filename_component(ASSIMP_LIBRARY_DIRS ${ASSIMP_LIBRARY} DIRECTORY)
-set(ASSIMP_INCLUDE_DIRS ${ASSIMP_INCLUDE_DIR})
+set(ASSIMP_INCLUDE_DIRS ${ASSIMP_INCLUDE_DIR} ${ASSIMP_INCLUDE_DIR}/../)
