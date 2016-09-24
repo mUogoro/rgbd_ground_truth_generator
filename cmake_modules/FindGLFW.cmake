@@ -19,15 +19,15 @@ if (WIN32)
   elseif (MSVC14)
     set(LIB_SUFFIX "-vc2015")
   endif()
-  find_library(GLFW_LIBRARY NAMES glfw3
+  find_library(GLFW_LIBRARY NAMES glfw glfw3
                PATHS ${GLFW_PATH_GUESS}
                PATH_SUFFIXES "lib${LIB_SUFFIX}")
 elseif (UNIX AND NOT APPLE)
   find_path(GLFW_INCLUDE_DIR glfw3.h
-            PATHS "/usr/include"
+            PATHS "/usr/include" "/usr/local/include"
 	    PATH_SUFFIXES "GL" "GLFW")
-  find_library(GLFW_LIBRARY NAMES glfw3
-               PATHS "/usr/lib64" "/usr/lib")
+  find_library(GLFW_LIBRARY NAMES glfw glfw3
+               PATHS "/usr/local/lib64" "/usr/local/lib" "/usr/lib64" "/usr/lib")
 endif (WIN32)
 			   
 include(FindPackageHandleStandardArgs)

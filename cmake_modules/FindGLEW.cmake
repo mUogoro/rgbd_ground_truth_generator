@@ -16,10 +16,10 @@ if (WIN32)
                PATH_SUFFIXES "lib" "lib/Release" "lib/Release/x64")
 elseif (UNIX AND NOT APPLE)
   find_path(GLEW_INCLUDE_DIR glew.h
-            PATHS "/usr/include"
+            PATHS "/usr/local/include"
 	    PATH_SUFFIXES "GL" "GLEW")
-  find_library(GLEW_LIBRARY NAMES glew
-               PATHS "/usr/lib64" "/usr/lib")
+  find_library(GLEW_LIBRARY NAMES GLEW glew
+               PATHS "/usr/local/lib64" "/usr/local/lib" "/usr/lib64" "/usr/lib")
 endif (WIN32)
 			   
 include(FindPackageHandleStandardArgs)

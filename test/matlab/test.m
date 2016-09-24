@@ -5,8 +5,8 @@
 %% SETUP PARAMETERS
 
 % Select the model.
-MODEL = 'Hand';
-%MODEL = 'Human';
+MODEL = 'hand';
+%MODEL = 'human';
 
 % Rendering parameters
 % - Resolution
@@ -20,7 +20,7 @@ RENDER_NEAR=20;
 RENDER_FAR=1000;
 
 % Distance of the model from the camera
-if strcmp(MODEL, 'Hand')
+if strcmp(MODEL, 'hand')
     MODEL_DIST = 50;
 else
     MODEL_DIST = 400;
@@ -65,7 +65,7 @@ pose(3,4,1) = -MODEL_DIST;
 % Animating the model: the model is animated by setting the homogeneous
 % matrix (typically a rotation matrix) of a specific bone. Given the
 % name of the bone, we must first retrieve its index in the pose matrix
-if strcmp(MODEL, 'Human')
+if strcmp(MODEL, 'human')
     boneNames = {'upperarm_l', 'upperarm_r'};
 else
     boneNames = {'ring_1_R', 'ring_2_R', 'ring_3_R', ...

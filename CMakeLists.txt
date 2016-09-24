@@ -1,11 +1,11 @@
-cmake_minimum_required (VERSION 3.1)
+cmake_minimum_required (VERSION 3.3.2)
 
 project (ModelRenderer)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
 find_package(Eigen REQUIRED)
-find_package(assimp REQUIRED)
+find_package(Assimp REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(GLFW REQUIRED)
 find_package(OpenGL REQUIRED)

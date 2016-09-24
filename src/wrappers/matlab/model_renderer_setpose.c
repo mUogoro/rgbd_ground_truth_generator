@@ -38,8 +38,9 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
   float *poseMatrix;
   if (mxIsDouble(prhs[1]))
   {
+    int i=0;
     poseMatrix = malloc(4*4*nBones*sizeof(float));
-    for (int i=0; i<4*4*nBones; i++) poseMatrix[i] = ((double*)poseMatrixPtr)[i];
+    for (; i<4*4*nBones; i++) poseMatrix[i] = ((double*)poseMatrixPtr)[i];
   }
   else
   {

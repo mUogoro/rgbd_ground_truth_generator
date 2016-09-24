@@ -1,6 +1,9 @@
-# GroundTruthGenerator: a set of tools to generate synthetic RGBD datasets for Computer Vision applications
+# RGBD Ground Truth Generator: a set of tools to generate synthetic RGBD datasets for Computer Vision applications
 
-The GroundTruthGenerator project provides a small set of routines for generating synthetic datasets of RGB-D images. The main component of the library is the ModelRenderer C++ class where the rendering and animation are implemented. C and Matlab interfaces are provided as well.
+The RGBD Ground Truth Generator project provides a small set of routines for generating synthetic datasets of RGB-D images. The main component of the library is the ModelRenderer C++ class where the rendering and animation are implemented. C and Matlab interfaces are provided as well.
+
+The library has been developed by the [Engineering for Health and Wellbeing group](http://www.ehw.ieiit.cnr.it/?q=computervision) at the [Institute of Electronics, Computer and Telecommunication Engineering](http://www.ieiit.cnr.it)
+of the National Research Council of Italy (CNR).
 
 ## RGBD dataset
 An RGBD dataset consists of a (potentially large) set of image pairs, where each pair contains:
@@ -26,7 +29,27 @@ What the library does not do:
 - Matlab (for matlab wrappers) 
 
 ## Supported platforms
-The library has been tested on both Linux (GCC) and Windows (Visual Studio 2013).
+The library has been tested on both Ubuntu Linux (GCC) and Windows (Visual Studio 2013).
+
+## Installation
+```
+git clone https://github.com/mUogoro/rgbd_grabber.git rgbd_grabber
+```
+On Linux:
+```
+cd rgbd_grabber
+mkdir build && cd build
+cmake ..
+make && make install
+```
+On Windows:
+```
+cd rgbd_grabber
+mkdir build
+cd build
+cmake ..
+```
+Go to the build directory, open the Visual Studio solution file and compile the library. Compile the INSTALL target to perform installation.
 
 ## Documentation
 Read the inline comments in the test.m matlab script to learn about the Matlab API. The Doxygen documentation of the C wrapper is provided as well.
